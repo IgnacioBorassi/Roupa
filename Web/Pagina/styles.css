@@ -1,8 +1,15 @@
 .fontNewRoman{
     font-family: "Times New Roman", Times, serif;
 }
+.bold{
+    font-weight: bold;
+}
 .centrar{
     text-align: center;
+}
+.centrarHW{
+    margin-top: auto;
+    margin-bottom:auto;
 }
 .izq{
     float: left;
@@ -27,7 +34,9 @@ img {
 body {
     background-image: linear-gradient(to right , #FFB532 , #FDBF52);
 }
-
+.navbar-custom {
+    background-color: transparent;
+}
 .searchBox {
     position: absolute;
     top: 50%;
@@ -82,5 +91,33 @@ body {
     width: 150px;
     padding: 0 6px;
 }
+}
+
+.block img {
+    text-align: center;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+  }
+.block h2 {
+    text-align: center;
+  }
+  /*NEW STYLES*/
+.block {
+    display: grid;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    background: white;
+    padding: 1rem;
+  }
+.seccion{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
   
