@@ -1,6 +1,12 @@
 .fontNewRoman{
     font-family: "Times New Roman", Times, serif;
 }
+.fontSizeNav{
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    cursor:pointer
+}
 .bold{
     font-weight: bold;
 }
@@ -36,6 +42,21 @@ body {
 }
 .navbar-custom {
     background-color: transparent;
+}
+
+.search-bar {
+    height: 45px;
+    border-radius: 10px;
+    width: 100%;
+    border: #FDBF52;
+    outline: 2px #FDBF52;
+}
+.search-bar::placeholder {
+    text-align: center;
+}
+.search-bar[type=text]
+{
+    text-align: center;
 }
 .searchBox {
     position: absolute;
@@ -93,7 +114,12 @@ body {
 }
 }
 
-.block img {
+.logoimg{
+    width: 120px;
+    height: 30px;
+}
+
+.blockimg {
     text-align: center;
     margin: auto;
     width: 200px;

@@ -5,18 +5,36 @@
   <meta charset="utf-8">
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/1785/1785255.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <title>Roupa</title>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-custom">
-    <a style="color:white; font-size: 30px;" class="navbar-brand fontNewRoman bold" href="index.html">Roupa</a>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    
+    <div class="col-md-4">
+      <a style="font-size: 30px; color: white;" class="navbar-brand fontSizeNav" href="index.html">Roupa</a>
+    </div>
+    <div class="col-md-4 centrar">
+        <form action="search.html">
+          <input type="text" class="search-bar" placeholder="Busqueda">
+        </form>
+    </div>
+    <div class="col-md-4 centrar" id="navbarSupportedContent">
+      <div class="dropdown der centrarHW">
+        <p style="font-size: 30px; color: white;" class="fontSizeNav dropdown-toggle" data-toggle="dropdown">
+          Categorias
+        </p>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li><a href="#">Vestidos</a></li>
+          <li><a href="#">Camisas</a></li>
+          <li><a href="#">Remeras</a></li>
+        </ul>
+        
+      </div>
     </div>
   </nav>
   
@@ -24,14 +42,21 @@
     <div class="row">
       <!--Acá empieza-->
       <div class="col-md-3">
-        <div class="block">
-            <a style="color: black;" class="centrar" href="https://articulo.mercadolibre.com.ar/MLA-1147314066-remeras-algodon-peinado-241-lisas-ninos-fabricantes-_JM?searchVariation=174838699114#searchVariation=174838699114&position=3&search_layout=grid&type=item&tracking_id=70f66413-13db-48da-91df-8aa00695beee">
-              <img src="https://http2.mlstatic.com/D_NQ_NP_2X_999782-MLA50771896245_072022-F.webp" alt="">
-              <div class="centrarHW">
-                <p class="centrarHW centrar bold">Remeras Algodón Peinado</p>
-                <p class="centrarHW centrar">$1.184,04</p>
+        <div class="block seccion">
+          <a style="color: black;" class="centrar" href="https://articulo.mercadolibre.com.ar/MLA-1147314066-remeras-algodon-peinado-241-lisas-ninos-fabricantes-_JM?searchVariation=174838699114#searchVariation=174838699114&position=3&search_layout=grid&type=item&tracking_id=70f66413-13db-48da-91df-8aa00695beee">
+            <div class="col-md-12">
+              <div class="col-md-4 justify-content-left">
+                <img class="logoimg" src="https://logodownload.org/wp-content/uploads/2018/10/mercado-libre-logo.png">
               </div>
-            </a>
+            </div>
+            <div class="col-md-12">
+                <img class="blockimg" src="https://http2.mlstatic.com/D_NQ_NP_2X_999782-MLA50771896245_072022-F.webp" alt="Producto">
+            </div>
+              <div class="col-md-12 centrarHW">
+              <p class="centrarHW centrar bold">Remeras Algodón Peinado</p>
+              <p class="centrarHW centrar">$1.184,04</p>
+            </div>
+          </a>
         </div>
       </div>
       <!--Acá termina-->
