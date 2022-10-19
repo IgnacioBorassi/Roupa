@@ -28,8 +28,15 @@
 }
 .row {
     display: flex;
-  }
-  
+}
+
+ul li{
+    list-style: none;
+}
+ul{
+    padding-left: 0;
+}
+
 .column {
     flex: 50%;
 }
