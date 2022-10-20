@@ -9,8 +9,17 @@ class Scraper:
 
 	@staticmethod
 	def search(value, gender):
+		products = list()
+
 		for brand in Brand:
 			if Scraper.brand_class[brand].has_gender(gender):
-				print(Scraper.brand_class[brand].search(value, gender))
+				if len(Scraper.brand_class[brand].get_genders()) == 1:
+					products.extend(Scraper.brand_class[brand].search(value))
+
+				else:
+					products.extend(Scraper.brand_class[brand].search(value, gender))
+
+			return products
+
 
 print(Scraper.search("Camisas", Gender.WOMAN))
