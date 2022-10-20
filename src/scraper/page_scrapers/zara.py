@@ -1,7 +1,6 @@
 from product import Product
 from page_scrapers import st, By, Enum, Gender, PageScraper
 
-
 class Zara(PageScraper):
 	gender = {Gender.MAN : 'MAN', Gender.WOMAN : 'WOMAN'}
 	link = {
@@ -33,4 +32,4 @@ class Zara(PageScraper):
 		# Convierte el texto del cost (ej: '23.990,00 ARS') en un float (ej: 23990.00)
 		cost = float(cost[0:len(cost)-3].replace('.', '').replace(',', '.')) 
 		
-		return Product(name, cost, img, link)
+		return Product(Brand.ZARA, name, cost, img, link)
