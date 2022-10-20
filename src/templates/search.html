@@ -41,115 +41,33 @@
   <div class="container-fluid seccion">
     <ul class="row">
       <!--Acá empieza-->
+      {%for lista in range(0,len)%}
       <li class="col-md-3">
         <div class="block seccion">
-          <a style="color: black;" class="centrar" href="https://articulo.mercadolibre.com.ar/MLA-1147314066-remeras-algodon-peinado-241-lisas-ninos-fabricantes-_JM?searchVariation=174838699114#searchVariation=174838699114&position=3&search_layout=grid&type=item&tracking_id=70f66413-13db-48da-91df-8aa00695beee">
+        
+        
+          <a style="color: black;" class="centrar" href="{{ listas[lista][1]}}">
+          
             <div class="col-md-12">
               <div class="col-md-4 justify-content-left">
-                <img class="logoimg" src="https://logodownload.org/wp-content/uploads/2018/10/mercado-libre-logo.png">
+                <img class="logoimg" src="{{listas[lista][4]}}">
               </div>
             </div>
             <div class="col-md-12">
-                <img class="blockimg" src="https://http2.mlstatic.com/D_NQ_NP_2X_999782-MLA50771896245_072022-F.webp" alt="Producto">
+                <img class = "blockimg" src="{{ listas[lista][0] }}" alt="Producto">
             </div>
               <div class="col-md-12 centrarHW">
-              <p class="centrarHW centrar bold">Remeras Algodón Peinado</p>
-              <p class="centrarHW centrar">$1.184,04</p>
+              <p class="centrarHW centrar bold">{{listas[lista][2]}}</p>
+              <p class="centrarHW centrar">${{listas[lista][3]}}</p>
             </div>
           </a>
+          
+          
         </div>
+      
       </li>
+      {%endfor%}
       <!--Acá termina-->
-      <li class="col-md-3">
-          <div class="block seccion">
-            <a style="color: black;" class="centrar" href="https://articulo.mercadolibre.com.ar/MLA-1147314066-remeras-algodon-peinado-241-lisas-ninos-fabricantes-_JM?searchVariation=174838699114#searchVariation=174838699114&position=3&search_layout=grid&type=item&tracking_id=70f66413-13db-48da-91df-8aa00695beee">
-              <div class="col-md-12">
-                <div class="col-md-4 justify-content-left">
-                  <img class="logoimg" src="https://logodownload.org/wp-content/uploads/2018/10/mercado-libre-logo.png">
-                </div>
-              </div>
-              <div class="col-md-12">
-                  <img class="blockimg" src="https://http2.mlstatic.com/D_NQ_NP_2X_999782-MLA50771896245_072022-F.webp" alt="Producto">
-              </div>
-                <div class="col-md-12 centrarHW">
-                <p class="centrarHW centrar bold">Remeras Algodón Peinado</p>
-                <p class="centrarHW centrar">$1.184,04</p>
-              </div>
-            </a>
-          </div>
-      </li>
-      <li class="col-md-3">
-          <div class="block seccion">
-            <a style="color: black;" class="centrar" href="https://articulo.mercadolibre.com.ar/MLA-1147314066-remeras-algodon-peinado-241-lisas-ninos-fabricantes-_JM?searchVariation=174838699114#searchVariation=174838699114&position=3&search_layout=grid&type=item&tracking_id=70f66413-13db-48da-91df-8aa00695beee">
-              <div class="col-md-12">
-                <div class="col-md-4 justify-content-left">
-                  <img class="logoimg" src="https://logodownload.org/wp-content/uploads/2018/10/mercado-libre-logo.png">
-                </div>
-              </div>
-              <div class="col-md-12">
-                  <img class="blockimg" src="https://http2.mlstatic.com/D_NQ_NP_2X_999782-MLA50771896245_072022-F.webp" alt="Producto">
-              </div>
-                <div class="col-md-12 centrarHW">
-                <p class="centrarHW centrar bold">Remeras Algodón Peinado</p>
-                <p class="centrarHW centrar">$1.184,04</p>
-              </div>
-            </a>
-          </div>
-      </li>
-      <li class="col-md-3">
-          <div class="block seccion">
-            <a style="color: black;" class="centrar" href="https://articulo.mercadolibre.com.ar/MLA-1147314066-remeras-algodon-peinado-241-lisas-ninos-fabricantes-_JM?searchVariation=174838699114#searchVariation=174838699114&position=3&search_layout=grid&type=item&tracking_id=70f66413-13db-48da-91df-8aa00695beee">
-              <div class="col-md-12">
-                <div class="col-md-4 justify-content-left">
-                  <img class="logoimg" src="https://logodownload.org/wp-content/uploads/2018/10/mercado-libre-logo.png">
-                </div>
-              </div>
-              <div class="col-md-12">
-                  <img class="blockimg" src="https://http2.mlstatic.com/D_NQ_NP_2X_999782-MLA50771896245_072022-F.webp" alt="Producto">
-              </div>
-                <div class="col-md-12 centrarHW">
-                <p class="centrarHW centrar bold">Remeras Algodón Peinado</p>
-                <p class="centrarHW centrar">$1.184,04</p>
-              </div>
-            </a>
-          </div>
-      </li>
-      <li class="col-md-3">
-          <div class="block seccion">
-            <a style="color: black;" class="centrar" href="https://articulo.mercadolibre.com.ar/MLA-1147314066-remeras-algodon-peinado-241-lisas-ninos-fabricantes-_JM?searchVariation=174838699114#searchVariation=174838699114&position=3&search_layout=grid&type=item&tracking_id=70f66413-13db-48da-91df-8aa00695beee">
-              <div class="col-md-12">
-                <div class="col-md-4 justify-content-left">
-                  <img class="logoimg" src="https://logodownload.org/wp-content/uploads/2018/10/mercado-libre-logo.png">
-                </div>
-              </div>
-              <div class="col-md-12">
-                  <img class="blockimg" src="https://http2.mlstatic.com/D_NQ_NP_2X_999782-MLA50771896245_072022-F.webp" alt="Producto">
-              </div>
-                <div class="col-md-12 centrarHW">
-                <p class="centrarHW centrar bold">Remeras Algodón Peinado</p>
-                <p class="centrarHW centrar">$1.184,04</p>
-              </div>
-            </a>
-          </div>
-      </li>
-      <li class="col-md-3">
-          <div class="block seccion">
-            <a style="color: black;" class="centrar" href="https://articulo.mercadolibre.com.ar/MLA-1147314066-remeras-algodon-peinado-241-lisas-ninos-fabricantes-_JM?searchVariation=174838699114#searchVariation=174838699114&position=3&search_layout=grid&type=item&tracking_id=70f66413-13db-48da-91df-8aa00695beee">
-              <div class="col-md-12">
-                <div class="col-md-4 justify-content-left">
-                  <img class="logoimg" src="https://logodownload.org/wp-content/uploads/2018/10/mercado-libre-logo.png">
-                </div>
-              </div>
-              <div class="col-md-12">
-                  <img class="blockimg" src="https://http2.mlstatic.com/D_NQ_NP_2X_999782-MLA50771896245_072022-F.webp" alt="Producto">
-              </div>
-                <div class="col-md-12 centrarHW">
-                <p class="centrarHW centrar bold">Remeras Algodón Peinado</p>
-                <p class="centrarHW centrar">$1.184,04</p>
-              </div>
-            </a>
-          </div>
-      </li>
     </ul>
   </div>
         
