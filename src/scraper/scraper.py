@@ -20,6 +20,3 @@ class Scraper:
 					products.extend(Scraper.brand_class[brand].search(value, gender))
 
 			return products
-
-
-print(Scraper.search("Camisas", Gender.WOMAN))
