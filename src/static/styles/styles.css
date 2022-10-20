@@ -1,9 +1,10 @@
-.fontNewRoman{
-    font-family: "Times New Roman", Times, serif;
+.fontLora{
+    font-family: 'Lora', serif;
+    color: white;
 }
 .fontSizeNav{
     color: white;
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Lora', serif;
     font-weight: bold;
     cursor:pointer
 }
@@ -16,9 +17,6 @@
 .centrarHW{
     margin-top: auto;
     margin-bottom:auto;
-}
-.izq{
-    float: left;
 }
 .der{
     text-align: right;
@@ -45,7 +43,7 @@ img {
   }
 
 body {
-    background-image: linear-gradient(to right , #FFB532 , #FDBF52);
+    background-image: linear-gradient(to right , #212121 , #0E0E0E);
 }
 .navbar-custom {
     background-color: transparent;
@@ -55,8 +53,8 @@ body {
     height: 45px;
     border-radius: 10px;
     width: 100%;
-    border: #FDBF52;
-    outline: 2px #FDBF52;
+    border: #212121;
+    outline: 2px #212121;
 }
 .search-bar::placeholder {
     text-align: center;
@@ -70,7 +68,7 @@ body {
     top: 50%;
     left: 50%;
     transform:  translate(-50%,50%);
-    background: #2f3640;
+    background: white;
     height: 40px;
     border-radius: 40px;
     padding: 10px;
@@ -83,18 +81,18 @@ body {
 }
 
 .searchBox:hover > .searchButton {
-  background:#2f3640;
-  color : white;
+    background:whitesmoke;
+    color : #2f3640;
 }
 
 .searchButton {
     text-decoration: none;
-    color: white;
+    color: #212121;
     float: right;
     width: 40px;
     height: 40px;
     border:none;
-    background: #2f3640;
+    background: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,7 +105,7 @@ body {
     outline:none;
     float:left;
     padding: 0;
-    color: white;
+    color: #212121;
     font-size: 16px;
     transition: 0.4s;
     line-height: 40px;
@@ -134,7 +132,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    
+    padding: 5px;;
   }
 .block h2 {
     text-align: center;
@@ -157,4 +155,11 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-  
+.containerMargin{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+} 

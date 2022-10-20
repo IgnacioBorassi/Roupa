@@ -22,14 +22,13 @@ def listas():
     fotos = ["https://http2.mlstatic.com/D_NQ_NP_2X_999782-MLA50771896245_072022-F.webp","https://static.zara.net/photos///2022/S/0/2/p/3929/370/710/2/w/750/3929370710_6_1_1.jpg?ts=1665998674874","https://static.zara.net/photos///2022/S/0/2/p/3929/374/400/2/w/707/3929374400_6_1_1.jpg?ts=1665998673623","https://static.zara.net/photos///2022/S/0/2/p/4395/471/800/502/w/750/4395471800_2_1_1.jpg?ts=1655390632671","https://static.zara.net/photos///2022/S/0/2/p/7545/580/634/2/w/750/7545580634_2_1_1.jpg?ts=1655396622640"]
     nombre=["Remeras Algodón Peinado", "CAMISA RAYAS ALGODÓN - LINO", "CAMISA RAYAS ALGODÓN - LINO", "CAMISA POPELÍN ELÁSTICO","CAMISA PANA"]
     precio=["1.230", "15.990", "15.990", "15.990","15.990"]
-    logo = ["https://logodownload.org/wp-content/uploads/2018/10/mercado-libre-logo.png","https://img2.freepng.es/20180704/jrk/kisspng-zara-logo-inditex-brand-lacoste-logo-5b3d343e83de54.0243255115307377265401.jpg", "https://img2.freepng.es/20180704/jrk/kisspng-zara-logo-inditex-brand-lacoste-logo-5b3d343e83de54.0243255115307377265401.jpg","https://img2.freepng.es/20180704/jrk/kisspng-zara-logo-inditex-brand-lacoste-logo-5b3d343e83de54.0243255115307377265401.jpg","https://img2.freepng.es/20180704/jrk/kisspng-zara-logo-inditex-brand-lacoste-logo-5b3d343e83de54.0243255115307377265401.jpg","https://img2.freepng.es/20180704/jrk/kisspng-zara-logo-inditex-brand-lacoste-logo-5b3d343e83de54.0243255115307377265401.jpg"]
+    logo = ["https://logodownload.org/wp-content/uploads/2018/10/mercado-libre-logo.png","https://www.pnguniverse.com/wp-content/uploads/2020/11/Zara.png", "https://www.pnguniverse.com/wp-content/uploads/2020/11/Zara.png","https://www.pnguniverse.com/wp-content/uploads/2020/11/Zara.png","https://www.pnguniverse.com/wp-content/uploads/2020/11/Zara.png","https://www.pnguniverse.com/wp-content/uploads/2020/11/Zara.png"]
     producto = []
     
     for i in range(0,len(fotos)):
     	
     	producto.append([fotos[i],links[i], nombre[i], precio[i], logo[i]])
     	
-    
     return producto
 if __name__ == "__main__":
     app.run()

@@ -2,12 +2,19 @@
 
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/1785/1785255.png">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}"/>
-  <title>Roupa</title>
+    <meta charset="utf-8">
+    <!--Simbolo de Busqueda-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--CSS-->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}"/>
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&display=swap" rel="stylesheet">
+  
+    <title>Roupa</title>
+    <link rel="icon" src="{{ url_for('static',filename='images/dress.png') }}">
+  
 </head>
 
 <body>
@@ -15,8 +22,9 @@
         <div class="col-md-12 small">
             <div class="row">
                 <div class="column centrar">
-                    <p class="fontNewRoman fontsize">Roupa 
-                        <img src="https://cdn-icons-png.flaticon.com/128/1785/1785255.png" width="128" height="128"> 
+                    <p class="fontLora fontsize">
+                        Roupa 
+                        <img src="{{ url_for('static',filename='images/dress.png') }}" width="128" height="128"> 
                     </p> 
                 </div>
             </div>
