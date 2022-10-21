@@ -52,18 +52,18 @@
       {%for lista in range(0,len)%}
       <li class="col-md-3">
         <div class="block seccion">
-          <a style="color: black;" class="centrar" href="{{ listas[lista][1]}}">
+          <a style="color: black;" class="centrar" href="{{ listas[lista].link}}">
             <div class="col-md-12">
               <div class="col-md-4 justify-content-left">
                 <img class="logoimg" src="{{listas[lista][4]}}">
               </div>
             </div>
             <div class="col-md-12">
-                <img class = "blockimg" src="{{ listas[lista][0] }}" alt="Producto">
+                <img class = "blockimg" src="{{ listas[lista].image }}" alt="Producto">
             </div>
               <div class="col-md-12 centrarHW">
-              <p class="centrarHW centrar bold">{{listas[lista][2]}}</p>
-              <p class="centrarHW centrar">${{listas[lista][3]}}</p>
+              <p class="centrarHW centrar bold">{{listas[lista].name}}</p>
+              <p class="centrarHW centrar">${{listas[lista].cost}}</p>
             </div>
           </a>
         </div>

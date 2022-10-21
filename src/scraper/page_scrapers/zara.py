@@ -1,15 +1,15 @@
-from product import Product
-from page_scrapers import st, By, Enum, Gender, PageScraper
+from scraper.product import Product
+from scraper.page_scrapers import st, By, Enum, Gender, PageScraper, Brand
 
 class Zara(PageScraper):
-	gender = {Gender.MAN : 'MAN', Gender.WOMAN : 'WOMAN'}
+	gender = {Gender.MAN.name : 'MAN', Gender.WOMAN.name : 'WOMAN'}
 	link = {
 		"search" : lambda product_name, gender : f"https://www.zara.com/ar/es/search?searchTerm={product_name}&section={gender}"
 	}
 
 	@staticmethod
 	def search(product_name, gender):
-		driver = st.create_driver(Zara.link["search"](product_name, gender))
+		driver = st.create_driver(Zara.link["search"](product_name, gender.name))
 		st.scroll(driver, 1, 300)
 		values = st.find_in_find(
 			driver,

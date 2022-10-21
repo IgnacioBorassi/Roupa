@@ -1,4 +1,4 @@
-from page_scrapers import Gender
+from scraper.page_scrapers import Gender
 
 class PageScraper:
 	gender: dict

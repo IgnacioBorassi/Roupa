@@ -13,7 +13,7 @@ class ScrapTool():
                options = Options()
                options.binary_location = r'C:\\Program Files\\Mozilla Firefox\\firefox.exe'
 
-               driver = webdriver.Firefox(executable_path=f"{script_dir}\\geckodrivers\\geckodriver.exe", options=options)
+               driver = webdriver.Firefox(executable_path=f"{script_dir}\\geckodriver.exe", options=options)
           elif sys.platform == "linux":
                if platform.freedesktop_os_release()['ID'] == 'linuxmint':
                     driver = webdriver.Firefox(executable_path=f'{script_dir}/geckodriver')

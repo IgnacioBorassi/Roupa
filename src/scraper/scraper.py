@@ -1,6 +1,6 @@
-from page_scrapers import Gender
-from page_scrapers.zara import Zara
-from brand import Brand
+from scraper.page_scrapers import Gender
+from scraper.page_scrapers.zara import Zara
+from scraper.brand import Brand
 
 class Scraper:
 	brand_class = {

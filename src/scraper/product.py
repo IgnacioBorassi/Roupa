@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from brand import Brand
+from scraper.brand import Brand
 
 @dataclass(frozen=True)
 class Product:
