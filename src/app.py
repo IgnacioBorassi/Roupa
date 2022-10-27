@@ -4,8 +4,13 @@ from scraper.scraper import Scraper
 from scraper.page_scrapers import Gender
 
 app = Flask(__name__)
-@app.route("/")
+@app.route("/",methods = ['POST', 'GET'])
 def home():
+    if request.method == 'POST':
+        ropa = request.form['ropa']
+        lista = Scraper.search(ropa, Gender.MAN.name)
+        return render_template('search.html', listas=lista, len=len(lista))
+
     return render_template('index.html')
 
 @app.route("/search.html",methods = ['POST', 'GET'])
@@ -13,7 +18,8 @@ def search():
     lista = []
     if request.method == 'POST':
         ropa = request.form['ropa']
-        lista = Scraper.search(ropa, Gender.MAN.name)
+        if ropa != "":
+            lista = Scraper.search(ropa, Gender.MAN.name)
         
 
 

@@ -6,7 +6,7 @@ from scraper.brand import Brand
 class Scraper:
 	brand_class = {
 		Brand.ZARA : Zara,
-		Brand.EQUUS : Equus
+		#Brand.EQUUS : Equus
 	}
 
 	@staticmethod
