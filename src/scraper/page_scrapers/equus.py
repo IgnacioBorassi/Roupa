@@ -1,12 +1,11 @@
-from product import Product
-from brand import Brand
 import math
-from page_scrapers import st, By, Enum, Gender, PageScraper
+from scraper.product import Product
+from scraper.page_scrapers import st, By, Enum, Gender, PageScraper, Brand
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 class Equus(PageScraper):
-	gender = {Gender.MAN : 'MAN'}
+	gender = {Gender.MAN.name : 'MAN'}
 	link = {
 		'search' : lambda product_name, index=1: f'https://www.equus.com.ar/{product_name}?_q=&map=ft&page={index}',
 	}

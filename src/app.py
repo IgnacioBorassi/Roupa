@@ -9,7 +9,7 @@ def home():
 
 @app.route("/search.html")
 def search():
-    lista = Scraper.search("Camisas", Gender.MAN)
+    lista = Scraper.search("Camisas", Gender.MAN.name)
     return render_template('search.html', listas=lista, len=len(lista))
 if __name__ == "__main__":
     app.run()

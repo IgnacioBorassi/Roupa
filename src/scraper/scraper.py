@@ -1,10 +1,12 @@
 from scraper.page_scrapers import Gender
 from scraper.page_scrapers.zara import Zara
+from scraper.page_scrapers.equus import Equus
 from scraper.brand import Brand
 
 class Scraper:
 	brand_class = {
-		Brand.ZARA : Zara
+		Brand.ZARA : Zara,
+		Brand.EQUUS : Equus
 	}
 
 	@staticmethod
@@ -15,8 +17,7 @@ class Scraper:
 			if Scraper.brand_class[brand].has_gender(gender):
 				if len(Scraper.brand_class[brand].get_genders()) == 1:
 					products.extend(Scraper.brand_class[brand].search(value))
-
 				else:
 					products.extend(Scraper.brand_class[brand].search(value, gender))
 
-			return products
+		return products
