@@ -2,7 +2,7 @@ from scraper.product import Product
 from scraper.page_scrapers import st, By, Enum, Gender, PageScraper, Brand
 
 class Zara(PageScraper):
-	gender = {Gender.MAN.name : 'MAN', Gender.WOMAN.name : 'WOMAN'}
+	gender = {Gender.MAN : 'MAN', Gender.WOMAN : 'WOMAN'}
 	link = {
 		"search" : lambda product_name, gender : f"https://www.zara.com/ar/es/search?searchTerm={product_name}&section={gender}"
 	}
