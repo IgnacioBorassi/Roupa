@@ -4,7 +4,7 @@ import time, sys, os, platform
 
 class ScrapTool():
      @staticmethod
-     def create_driver(url: str):
+     def create_driver():
           script_dir = os.path.dirname(__file__)
           driver = None
 
@@ -24,8 +24,17 @@ class ScrapTool():
                + f"Maybe the os: {sys.platform}, or the distro: " \
                + f"{platform.freedesktop_os_release()['NAME']} is not supported."
 
-          driver.get(url)
           return driver
+
+
+     @staticmethod
+     def enter_page(driver, url: str):
+          driver.get(url)
+
+
+     @staticmethod
+     def wait(seconds):
+          time.sleep(seconds)
 
 
      @staticmethod
