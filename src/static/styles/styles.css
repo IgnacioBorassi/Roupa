@@ -123,6 +123,7 @@ body {
 .logoimg{
     width: 120px;
     height: 30px;
+    background: white;
 }
 
 .blockimg {
@@ -134,7 +135,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 5px;;
+    padding: 5px;
   }
 .block h2 {
     text-align: center;
