@@ -52,18 +52,24 @@
       {%for lista in range(0,len)%}
       <li class="col-md-3">
         <div class="block seccion">
-          <a style="color: white;" class="centrar" href="{{ listas[lista].link}}">
+          <a style="color: white;" class="centrar" href="{{ listas[lista][3]}}">
             <div class="col-md-12">
+              {%if listas[lista][4] == 1%}
               <div class="col-md-4 justify-content-left">
                 <img class="logoimg" src="https://logo-logos.com/2016/10/Zara_logo.png">
               </div>
+              {%else%}
+              <div class="col-md-4 justify-content-left">
+                <img class="logoimg" src="https://cdn.freebiesupply.com/logos/large/2x/equus-1-logo-png-transparent.png">
+              </div>
+              {%endif%}
             </div>
             <div class="col-md-12">
-                <img class = "blockimg" src="{{ listas[lista].image }}" alt="Producto">
+                <img class = "blockimg" src="{{ listas[lista][2] }}" alt="Producto">
             </div>
               <div class="col-md-12 centrarHW">
-              <p class="centrarHW centrar bold">{{listas[lista].name}}</p>
-              <p class="centrarHW centrar">${{listas[lista].cost}}</p>
+              <p class="centrarHW centrar bold">{{listas[lista][0]}}</p>
+              <p class="centrarHW centrar">${{listas[lista][1]}}</p>
             </div>
           </a>
         </div>
