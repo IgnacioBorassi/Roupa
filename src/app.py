@@ -51,11 +51,12 @@ def get_roupa(ropa):
 app = Flask(__name__)
 @app.route("/",methods = ['POST', 'GET'])
 def home():
+    lista = []
     if request.method == 'POST':
         ropa = request.form['ropa']
-        print(ropa)
         lista = get_roupa(ropa)
-        
+        if lista == None:
+            lista=[]
         return render_template('search.html', listas=lista, len=len(lista))
 
     return render_template('index.html')
@@ -66,7 +67,8 @@ def search():
     if request.method == 'POST':
         ropa = request.form['ropa']
         lista = get_roupa(ropa)
-        print(lista)
+    if lista == None:
+        lista=[]
         
     return render_template('search.html', listas=lista, len=len(lista))
 
