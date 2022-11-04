@@ -1,7 +1,6 @@
 from urllib import request
 from flask import Flask, render_template, request, url_for, redirect
-from scraper.scraper import Scraper
-from scraper.page_scrapers import Gender
+
 import mariadb
 import sys
 
@@ -25,7 +24,10 @@ def get_roupa(ropa):
     lista = []
     try:
         if ropa != "":
-            statement = "SELECT name, cost, image, link, id_brand FROM products WHERE name=%s"
+            statement = "SELECT name, cost, image, link, id_brand FROM products WHERE name LIKE '%"
+            statement += ropa
+            statement += "%'"
+            statement += " ORDER BY cost;"
             data = (ropa,)
             
             cursor.execute(statement, data)
@@ -34,6 +36,7 @@ def get_roupa(ropa):
             return lista
         
         statement = "SELECT name, cost, image, link, id_brand FROM products"
+        statement += " ORDER BY cost"
         data = (ropa,)
         cursor.execute(statement,data)
         for (ropa) in cursor:
@@ -50,6 +53,7 @@ app = Flask(__name__)
 def home():
     if request.method == 'POST':
         ropa = request.form['ropa']
+        print(ropa)
         lista = get_roupa(ropa)
         
         return render_template('search.html', listas=lista, len=len(lista))
@@ -62,7 +66,7 @@ def search():
     if request.method == 'POST':
         ropa = request.form['ropa']
         lista = get_roupa(ropa)
-        
+        print(lista)
         
     return render_template('search.html', listas=lista, len=len(lista))
 
