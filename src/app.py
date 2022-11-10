@@ -8,20 +8,19 @@ conn_params= {
     "user" : "root",
     "password" : "pX5jxpups2TWnx",
     "host" : "0.tcp.sa.ngrok.io",
-    "port" : 19848,
+    "port" : 13208,
     "database" : "roupa_products"
 }
 
-try:
-    conn = mariadb.connect(**conn_params)
-except mariadb.Error as e:
-    print(f"Error connecting to MariaDB Platform: {e}")
-    sys.exit(1)
-
-cursor = conn.cursor()
-
 def get_roupa(ropa):
     lista = []
+    try:
+        conn = mariadb.connect(**conn_params)
+    except mariadb.Error as e:
+        print(f"Error connecting to MariaDB Platform: {e}")
+        sys.exit(1)
+
+    cursor = conn.cursor()
     try:
         if ropa != "":
             statement = "SELECT name, cost, image, link, id_brand FROM products WHERE name LIKE '%"
@@ -41,6 +40,8 @@ def get_roupa(ropa):
         cursor.execute(statement,data)
         for (ropa) in cursor:
             lista.append(ropa)
+
+        cursor.close()
         return lista
         
         
@@ -54,6 +55,7 @@ def home():
     lista = []
     if request.method == 'POST':
         ropa = request.form['ropa']
+        
         lista = get_roupa(ropa)
         if lista == None:
             lista=[]
@@ -66,6 +68,9 @@ def search():
     lista = []
     if request.method == 'POST':
         ropa = request.form['ropa']
+        if ropa == "":
+            cate = request.form['categoria']
+            print(cate)
         lista = get_roupa(ropa)
     if lista == None:
         lista=[]
