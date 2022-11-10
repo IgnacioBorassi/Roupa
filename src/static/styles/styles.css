@@ -185,6 +185,34 @@ body {
     float:right;
 }
 
+.dropdown_custom { 
+    width: 110px;
+}
+.dropdown_custom > ul {
+    display: none;
+}
+.dropdown_custom > p{
+    font-size: 20px; 
+    color: white;
+}
+.dropdown_custom:hover > ul {
+    display: block;
+    background: transparent;
+    margin-left: 30px;
+}
+.dropdown_custom:hover > p {
+    color: gray;;
+}
+.dropdown_custom:hover > ul > li {
+    padding: 10px;
+}
+.ddropdown_customiv:hover > ul > li:hover {
+    background: white;
+}
+.dropdown_custom:hover > ul > li:hover > a {
+    color: white;
+}
+
 .margen{
     margin-top: 10px;
     margin-bottom: 5px;

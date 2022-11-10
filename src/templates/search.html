@@ -36,19 +36,18 @@
   <div class="container-fluid containerMargin">
     
     <aside class="sidebar">
-      <div class="dropdown centrarHW">
-        <form action="http://127.0.0.1:5000/search.html" method="post">
-          <!--<p style="font-size: 20px; color: white;" class="fontAside dropdown-toggle" data-toggle="dropdown">
-            CATEGORIAS
-          </p>-->
-          <select class="dropdown-toggle" name="categoria" >
-            <option value="Vestidos"> Vestidos </option>
-            <option value="Camisas"> Camisas </option>
-            <option value="Remeras"> Remeras </option> 
-          </select>
-          <input type="button">
-        </form>
-      </div>
+      <form action="http://127.0.0.1:5000/search.html" method="post">
+        <div class="dropdown_custom">
+          <p class="fontAside dropdown-toggle" data-toggle="dropdown">
+            CORTES
+          </p>   
+          <ul>
+              <li><a href="#" style="font-size: 20px; color: white;" class="fontAside">TODOS</a></li>
+              <li><a href="#" style="font-size: 20px; color: white;" class="fontAside">MUJER</a></li>
+              <li><a href="#" style="font-size: 20px; color: white;" class="fontAside">HOMBRE</a></li>
+          </ul>
+        </div>
+      </form>
     </aside>
 
     <main class="content">
