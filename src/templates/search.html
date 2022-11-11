@@ -22,33 +22,36 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="col-md-4">
-      <a style="font-size: 45px; color: white;" class="navbar-brand fontSizeNav" href="/">Roupa</a>
-    </div>
-    <div class="col-md-4 centrar">
-        <form action="http://127.0.0.1:5000/search.html" method = "post">
-          <input type="text" class="search-bar" placeholder="Busqueda" name="ropa">
-        </form>
-    </div>
-  </nav>
   
-  <div class="container-fluid containerMargin">
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="col-md-4">
+        <a style="font-size: 45px; color: white;" class="navbar-brand fontSizeNav" href="/">Roupa</a>
+      </div>
+      <div class="col-md-4 centrar">
+        <form method = "post">
+            <input type="text" class="search-bar" placeholder="Busqueda" name="ropa">
+         </form>
+      </div>
+    </nav>
     
-    <aside class="sidebar">
-      <form action="http://127.0.0.1:5000/search.html" method="post">
-        <div class="dropdown_custom">
-          <p class="fontAside dropdown-toggle" data-toggle="dropdown">
-            CORTES
-          </p>   
-          <ul>
-              <li><a href="#" style="font-size: 20px; color: white;" class="fontAside">TODOS</a></li>
-              <li><a href="#" style="font-size: 20px; color: white;" class="fontAside">MUJER</a></li>
-              <li><a href="#" style="font-size: 20px; color: white;" class="fontAside">HOMBRE</a></li>
-          </ul>
-        </div>
-      </form>
-    </aside>
+    <div class="container-fluid containerMargin">
+
+      <aside class="sidebar">
+        
+          <div class="dropdown_custom">
+            <p class="fontAside dropdown-toggle" data-toggle="dropdown">
+              CORTES
+            </p>   
+            <ul>
+              <form action = "http://127.0.0.1:5000/search" method = "get">
+                <li><a href="?genero=todo" value = "todo"  style="font-size: 20px; color: white;" class="fontAside" name="genero">TODOS</a></li>
+                <li><a href="?genero=WOMAN" value = "WOMAN"  style="font-size: 20px; color: white;" class="fontAside" name="genero">MUJER</a></li>
+                <li><a href="?genero=MAN"value = "MAN" style="font-size: 20px; color: white;" class="fontAside" name="genero">HOMBRE</a></li>
+              </form>
+              </ul>
+          </div>
+        
+      </aside>
 
     <main class="content">
       <ul class="row">
@@ -83,6 +86,6 @@
       </ul>
     </main>
   </div>
-        
+</form>  
 </body>
 </html>
