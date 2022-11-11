@@ -4,13 +4,23 @@ from flask import Flask, render_template, request, url_for, redirect
 import mariadb
 import sys
 
+class ListaProductos:
+    def __init__(self):
+        self.lista=[]
+
+    def set_lista(self, listaNueva):
+        self.lista = listaNueva
+        
+    def get_lista(self):
+        
+        return self.lista
 
 
 conn_params= {
     "user" : "root",
     "password" : "pX5jxpups2TWnx",
     "host" : "0.tcp.sa.ngrok.io",
-    "port" : 19600,
+    "port" : 13048,
     "database" : "roupa_products"
 }
 
@@ -39,7 +49,7 @@ def get_roupa(ropa, genero):
                 lista.append(ropa)
             return lista
         if ropa == "" and genero != "todo":
-            statement = "SELECT name, cost, image, link, id_brand , gender FROM products WHERE gender='"
+            statement = "SELECT name, cost, image, link, id_brand, gender FROM products WHERE gender='"
             statement += genero
             statement += "' ORDER BY cost"
             data = (ropa,)
@@ -59,7 +69,7 @@ def get_roupa(ropa, genero):
                 lista.append(ropa)
             cursor.close()
             return lista
-        statement = "SELECT name, cost, image, link, id_brand FROM products"
+        statement = "SELECT name, cost, image, link, id_brand, gender FROM products"
         statement += " ORDER BY cost"
         data = (ropa,)
         cursor.execute(statement,data)
@@ -73,7 +83,7 @@ def get_roupa(ropa, genero):
     except mariadb.Error as e:
       print(f"Error retrieving entry from database: {e}")
 
-
+listaproducto = ListaProductos()
 
 app = Flask(__name__)
 @app.route("/",methods = ['POST', 'GET'])
@@ -82,6 +92,8 @@ def home():
     if request.method == 'POST':
         ropa = request.form['ropa']
         lista = get_roupa(ropa, "todo")
+        listaproducto.set_lista(lista)
+        
         if lista == None:
             lista=[]
         return render_template('search.html', listas=lista, len=len(lista))
@@ -96,14 +108,24 @@ def search():
         
         ropa = request.form['ropa'] 
         genero = request.args.get("genero", "todo")
-        print(genero)
-        print(ropa)
         lista = get_roupa(ropa, genero)
-    
+        listaproducto.set_lista(lista)
         return render_template('search.html', listas=lista, len=len(lista))
 
     else:
+        
+        lista = listaproducto.get_lista()
+        
         genero = request.args.get("genero", "todo")
+        listagen =[]
+        if genero == "todo":
+            return render_template('search.html', listas=lista, len=len(lista))
+        else:
+            for i in range(1, len(lista)):
+                if lista[i][5] == genero:
+                    listagen.append(lista[i])
+        
+        return render_template('search.html', listas=listagen, len=len(listagen))
         
 
     
