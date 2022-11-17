@@ -56,7 +56,7 @@ class Zara(Brand):
 
 
 	@classmethod
-	def run(cls, category: List[str] = list()) -> dict:
+	def run(cls, categories: List[str] = list()) -> dict:
 		if not categories: categories = cls.categories
 
 		products: dict = dict()
