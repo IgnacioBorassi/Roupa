@@ -20,7 +20,7 @@ conn_params= {
     "user" : "root",
     "password" : "pX5jxpups2TWnx",
     "host" : "0.tcp.sa.ngrok.io",
-    "port" : 13048,
+    "port" : 16792,
     "database" : "roupa_products"
 }
 

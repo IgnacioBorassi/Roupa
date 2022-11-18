@@ -16,32 +16,28 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Catamaran&family=Lora:ital,wght@1,700&display=swap" rel="stylesheet">
-
+  
+  <!--Iconos-->
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/1785/1785255.png">
   <title>Roupa</title>
 </head>
 
 <body>
-  
-    <nav class="navbar navbar-expand-lg navbar-custom">
-      <div class="col-md-4">
-        <a style="font-size: 45px; color: white;" class="navbar-brand fontSizeNav" href="/">Roupa</a>
+    <nav class="navbar_custom">
+      <div class="col-md-2 centrarHW">
+        <a style="font-size: 45px; color: white; margin: 10px;" class="navbar-brand fontSizeNav justify-content-left" href="/">Roupa</a>
       </div>
-      <div class="col-md-4 centrar">
+      <div class="col-md-10 search-bar-pos centrarHW">
         <form method = "post">
-            <input type="text" class="search-bar" placeholder="Busqueda" name="ropa">
+            <input style="margin: 10px;" type="text" autocomplete="off" class="search-bar" placeholder="Busqueda" name="ropa">
          </form>
       </div>
     </nav>
     
     <div class="container-fluid containerMargin">
-
       <aside class="sidebar">
-        
           <div class="dropdown_custom">
-            <p class="fontAside dropdown-toggle" data-toggle="dropdown">
-              CORTES
-            </p>   
+            <p class="fontAside dropdown-toggle" data-toggle="dropdown">CORTES</p>   
             <ul>
               <form action = "http://127.0.0.1:5000/search" method = "get">
                 <li><a href="?genero=todo" value = "todo"  style="font-size: 20px; color: white;" class="fontAside" name="genero">TODOS</a></li>
@@ -50,16 +46,15 @@
               </form>
               </ul>
           </div>
-        
       </aside>
 
     <main class="content">
       <ul class="row">
         <!--Acá empieza-->
         {%for lista in range(0,len)%}
-        <li class="col-md-3">
+        <li class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
           <div class="card">
-            <a style="color: white;" class="centrar" href="{{ listas[lista][3]}}">
+            <a style="color: white;" target="_blank" class="centrar" href="{{ listas[lista][3]}}">
               <div class="margen">
                 {%if listas[lista][4] == 2%}
                 <div class="justify-content-left">
