@@ -36,12 +36,12 @@ def get_roupa(ropa, genero):
     cursor = conn.cursor()
     try:
         if ropa != "" and genero != "todo":
-            statement = "SELECT name, cost, image, link, id_brand, gender FROM products WHERE name LIKE '%"
+            statement = "SELECT a.name, a.cost, a.image, a.link, a.gender, b.icon FROM products a, brands b WHERE a.id_brand = b.id_brand AND a.name LIKE '%"
             statement += ropa
             statement += "%'"
-            statement += "AND gender='"
+            statement += "AND a.gender='"
             statement += genero 
-            statement += "' ORDER BY cost;"
+            statement += "' ORDER BY a.cost;"
             data = (ropa,)
             
             cursor.execute(statement, data)
@@ -49,9 +49,9 @@ def get_roupa(ropa, genero):
                 lista.append(ropa)
             return lista
         if ropa == "" and genero != "todo":
-            statement = "SELECT name, cost, image, link, id_brand, gender FROM products WHERE gender='"
+            statement = "SELECT a.name, a.cost, a.image, a.link, a.gender, b.icon FROM products a, brands b WHERE a.id_brand = b.id_brand AND a.gender='"
             statement += genero
-            statement += "' ORDER BY cost"
+            statement += "' ORDER BY a.cost"
             data = (ropa,)
             cursor.execute(statement,data)
             for (ropa) in cursor:
@@ -59,18 +59,18 @@ def get_roupa(ropa, genero):
             cursor.close()
             return lista
         if ropa != "" and genero == "todo":
-            statement = "SELECT name, cost, image, link, id_brand , gender FROM products WHERE name LIKE '%"
+            statement = "SELECT a.name, a.cost, a.image, a.link, a.gender, b.icon FROM products a, brands b WHERE a.id_brand = b.id_brand AND a.name LIKE '%"
             statement += ropa
             statement += "%'"
-            statement += " ORDER BY cost"
+            statement += " ORDER BY a.cost"
             data = (ropa,)
             cursor.execute(statement,data)
             for (ropa) in cursor:
                 lista.append(ropa)
             cursor.close()
             return lista
-        statement = "SELECT name, cost, image, link, id_brand, gender FROM products"
-        statement += " ORDER BY cost"
+        statement = "SELECT a.name, a.cost, a.image, a.link, a.gender, b.icon FROM products a, brands b WHERE a.id_brand = b.id_brand"
+        statement += " ORDER BY a.cost"
         data = (ropa,)
         cursor.execute(statement,data)
         for (ropa) in cursor:
@@ -109,6 +109,8 @@ def search():
         ropa = request.form['ropa'] 
         genero = request.args.get("genero", "todo")
         lista = get_roupa(ropa, genero)
+        print(lista[0])
+        print(lista[1])
         listaproducto.set_lista(lista)
         return render_template('search.html', listas=lista, len=len(lista))
 

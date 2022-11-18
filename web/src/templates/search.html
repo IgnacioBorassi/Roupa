@@ -55,16 +55,10 @@
         <li class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
           <div class="card">
             <a style="color: white;" target="_blank" class="centrar" href="{{ listas[lista][3]}}">
-              <div class="margen">
-                {%if listas[lista][4] == 2%}
+              <div class="margen">               
                 <div class="justify-content-left">
-                  <img class="logoimg" src="https://logo-logos.com/2016/10/Zara_logo.png">
+                  <img class="logoimg" src="{{listas[lista][5]}}">
                 </div>
-                {%else%}
-                <div class="justify-content-left">
-                  <img class="logoimg" src="https://equusio.vtexassets.com/assets/vtex/assets-builder/equusio.lyr-moda/6.1.7/Logo%20Equus%20positivo___d7b1c196aa17171a9a1162d9fa8ed6e2.png">
-                </div>
-                {%endif%}
               </div>
               <div>
                   <img class = "blockimg" src="{{ listas[lista][2] }}" alt="Producto">
