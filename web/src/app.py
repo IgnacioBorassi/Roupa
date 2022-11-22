@@ -109,8 +109,6 @@ def search():
         ropa = request.form['ropa'] 
         genero = request.args.get("genero", "todo")
         lista = get_roupa(ropa, genero)
-        print(lista[0])
-        print(lista[1])
         listaproducto.set_lista(lista)
         return render_template('search.html', listas=lista, len=len(lista))
 
@@ -124,7 +122,7 @@ def search():
             return render_template('search.html', listas=lista, len=len(lista))
         else:
             for i in range(1, len(lista)):
-                if lista[i][5] == genero:
+                if lista[i][4] == genero:
                     listagen.append(lista[i])
         
         return render_template('search.html', listas=listagen, len=len(listagen))
